@@ -5,6 +5,9 @@
        
         <AboutUs />
            
+        <OurTeam />
+
+        <OurWayButton />
 
     </section>
 
@@ -14,6 +17,8 @@
 
 <script setup>
 import AboutUs from './About_Us/AboutUs.vue';
+import OurTeam from './ourTeam/OurTeam.vue';
+import OurWayButton from './ourWayButton/OurWayButton.vue';
 
 
 </script>

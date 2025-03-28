@@ -1,9 +1,9 @@
 <template>
 
-    <article class="w-11/12  flex flex-col items-center  bg-sky-50">
+    <article class="w-full px-3 sm:px-6 lg:px-12 xl:px-28  flex flex-col items-center  bg-sky-50">
 
         <!-- title -->
-        <section class="flex flex-col items-center mt-20 w-full space-y-2 ">
+        <section class="flex flex-col items-center mt-20 w-full  space-y-2 ">
             <h1 class="text-4xl tracking-tighter">ما یک آژانس حرفه ای وب هستیم</h1>
             <div class="w-11/12 sm:w-10/12 md:w-[70%] lg:w-[60%] xl:w-[50%]
             h-[2px] bg-gradient-to-l from-gray-400 via-gray-200 to-gray-400"></div>
@@ -11,7 +11,7 @@
         </section>
 
         <!-- cols of what we do -->
-        <section class="py-3 flex gap-x-3 flex-col  lg:flex-row-reverse w-full justify-center  items-center">
+        <section class="py-3 flex space-y-3 lg:space-y-0 lg:gap-x-3 flex-col   lg:flex-row-reverse w-full justify-center  items-center">
             <div class="hover:scale-[1.06] transition-all duration-500 cursor-help w-9/12 sm:w-8/12 md:w-[60%] lg:w-auto
              bg-gray-100 flex flex-col items-center py-3 pt-8 px-3 space-y-2" v-for="(icon, index) in whatWeDoIcons" :key="index">
 
