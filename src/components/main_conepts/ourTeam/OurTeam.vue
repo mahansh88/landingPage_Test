@@ -5,7 +5,7 @@
             <h1 class="text-4xl tracking-tighter">یک تیم خلاق</h1>
 
             <!-- hr div -->
-            <div class="w-[80%] h-[4px] bg-gradient-to-l bg-gray-400 via-gray-200 to-gray-400"></div>
+            <div class="w-[80%] h-[4px] bg-gradient-to-l from-blue-600 via-blue-300 to-blue-600"></div>
 
             <h2 class="text-2xl tracking-tight">برای هر نوع بحثی با کارشناسان ما ملاقات کنید</h2>
 

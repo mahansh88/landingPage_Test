@@ -1,6 +1,9 @@
+
 @import "tailwindcss";
 
 @theme {
+  
   --font-Dana : "Dana";
+  --font-roboto: "Roboto", sans-serif;
 }
 
