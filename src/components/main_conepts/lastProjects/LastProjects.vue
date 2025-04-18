@@ -1,11 +1,11 @@
 <template>
     <section class="mt-3 space-y-8 bg-white w-full flex flex-col items-center py-3 px-4">
       <!-- Title -->
-      <div class="w-full flex flex-col space-y-3 items-center">
+      <div class="flex flex-col items-center space-y-3 w-11/12 sm:w-[88%] ">
         <h1 class="text-4xl tracking-tighter">آخرین پروژه ها</h1>
         <!-- hr div -->
         <div class="w-[80%] h-[4px] bg-gradient-to-l from-blue-600 via-blue-300 to-blue-600"></div>
-        <h2 class="text-2xl tracking-tight">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</h2>
+        <h2 class="text-xl sm:text-2xl tracking-tight">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ.</h2>
       </div>
   
       <!-- Projects -->

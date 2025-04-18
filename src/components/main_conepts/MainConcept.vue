@@ -14,6 +14,11 @@
         <LastProjects />
 
         <prices-cards />
+        
+        <NewsInfo />
+
+        <ContacUs class="mt-5" />
+
 
     </section>
 
@@ -27,6 +32,11 @@ import OurTeam from './ourTeam/OurTeam.vue';
 import OurWayButton from './ourWayButton/OurWayButton.vue';
 import LastProjects from './lastProjects/LastProjects.vue';    
 import PricesCards from './Prices/PricesCards.vue';     
+import ContacUs from './ContactUs/ContacUs.vue';
+import NewsInfo from './newsInfo/NewsInfo.vue';
+
+
+
 
 
 </script>

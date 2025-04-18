@@ -1,13 +1,13 @@
 <template>
     <section class="w-full bg-gradient-to-l items-center space-y-3 from-white via-sky-100 to-white py-3 px-4 flex flex-col">
         <!-- title -->
-        <div class="flex flex-col items-center space-y-2 w-full sm:w-[88%]  lg:w-[63%] ">
+        <div class="flex flex-col items-center space-y-3 w-full sm:w-[88%]  ">
             <h1 class="text-4xl tracking-tighter">یک تیم خلاق</h1>
 
             <!-- hr div -->
             <div class="w-[80%] h-[4px] bg-gradient-to-l from-blue-600 via-blue-300 to-blue-600"></div>
 
-            <h2 class="text-2xl tracking-tight">برای هر نوع بحثی با کارشناسان ما ملاقات کنید</h2>
+            <h2 class="text-xl sm:text-2xl tracking-tight">برای هر نوع بحثی با کارشناسان ما ملاقات کنید</h2>
 
         </div>
 

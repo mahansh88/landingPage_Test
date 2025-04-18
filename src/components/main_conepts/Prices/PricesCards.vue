@@ -3,7 +3,7 @@
     <section class="bg-sky-50 w-full py-3  space-y-3">
 
         <!-- title -->
-        <div class="flex flex-col w-full items-center space-y-3">
+        <div class="flex flex-col items-center space-y-3 w-full sm:w-[88%] mx-auto ">
 
             <h1 class="text-4xl tracking-tighter">طرح های قیمت</h1>
 
@@ -11,7 +11,7 @@
             <div class="bg-gradient-to-l from-blue-600 via-blue-300 to-blue-600  w-[88%] rounded-2xl h-[3px] " ></div>
 
 
-            <h2 class="text-2xl tracking-tight">لورم ایپسوم یک متن ساختگیست</h2>
+            <h2 class="text-xl sm:text-2xl tracking-tight">لورم ایپسوم یک متن ساختگیست</h2>
             
 
         </div>
