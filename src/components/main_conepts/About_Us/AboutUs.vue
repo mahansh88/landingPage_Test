@@ -1,26 +1,26 @@
 <template>
 
-    <article class="w-full px-3 sm:px-6 lg:px-12 xl:px-28  flex flex-col items-center  bg-sky-50">
+    <article id="about_us" class="w-full px-3 sm:px-6 lg:px-12 xl:px-28  flex flex-col items-center  bg-sky-50">
 
         <!-- title -->
         <section class="flex flex-col items-center mt-20 w-full  space-y-2 ">
-            <h1 class="text-4xl tracking-tighter">ما یک آژانس حرفه ای وب هستیم</h1>
+            <h1 class="text-4xl tracking-tighter text-white">ما یک آژانس حرفه ای وب هستیم</h1>
             <div class="w-11/12 sm:w-10/12 md:w-[70%] lg:w-[60%] xl:w-[50%]
-            h-[2px] bg-gradient-to-l from-gray-400 via-gray-200 to-gray-400"></div>
-            <h2 class="text-2xl tracking-tight">این یک قالب حرفه ای میباشد</h2>
+            h-[2px] bg-gradient-to-l from-blue-500 via-blue-300 to-blue-500"></div>
+            <h2 class="text-2xl tracking-tight text-white">این یک قالب حرفه ای میباشد</h2>
         </section>
 
         <!-- cols of what we do -->
         <section class="py-3 flex space-y-3 lg:space-y-0 lg:gap-x-3 flex-col   lg:flex-row-reverse w-full justify-center  items-center">
             <div class="hover:scale-[1.06] transition-all duration-500 cursor-help w-9/12 sm:w-8/12 md:w-[60%] lg:w-auto
-             bg-gray-100 flex flex-col items-center py-3 pt-8 px-3 space-y-2" v-for="(icon, index) in whatWeDoIcons" :key="index">
+             bg-gray-100 flex flex-col items-center py-14 pt-8 px-3 space-y-2" v-for="(icon, index) in whatWeDoIcons" :key="index">
 
-                <i :class="icon" class=""></i>
+                <i :class="icon" class="text-blue-600"></i>
 
                 <h1 class="text-2xl">{{ whatWeDoTitle[index] }}</h1>
-                <div class="w-[90%] h-[2px] bg-gradient-to-l from-gray-400 via-gray-200 to-gray-400"></div>
+                <div class="w-[90%] h-[2px] bg-gradient-to-l from-blue-500 via-blue-300 to-blue-500"></div>
                 <h2 class="text-xl">{{ whatWeDoText[index] }}</h2>
-                <div class="w-[90%] h-[2px] bg-gradient-to-l from-gray-400 via-gray-200 to-gray-400"></div>
+                <div class="w-[90%] h-[2px] bg-gradient-to-l from-blue-500 via-blue-300 to-blue-500"></div>
                 <p class="text-base">{{ whatWeDoText2[index] }}</p>
 
 
@@ -72,5 +72,22 @@ let whatWeDoText2 =[
     box-sizing: border-box;
 }
 
+/* Optional: Define primary and secondary colors for reuse */
+:root {
+  --primary-color: #ffffff; /* white */
+  --secondary-color: #3b82f6; /* blue-500 */
+}
+
+/* Apply primary color to text elements */
+h1, h2, p {
+  color: var(--primary-color);
+}
+
+/* Use secondary color for icons */
+i {
+  color: var(--secondary-color);
+}
+
+/* Optional: If you want to style other elements with these colors, add here */
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <section class="w-full bg-gradient-to-l items-center space-y-3 from-white via-sky-100 to-white py-3 px-4 flex flex-col">
+    <section id="team" class="w-full bg-gradient-to-l items-center space-y-3 from-white via-sky-100 to-white py-3 px-4 flex flex-col">
         <!-- title -->
         <div class="flex flex-col items-center space-y-3 w-full sm:w-[88%]  ">
             <h1 class="text-4xl tracking-tighter">یک تیم خلاق</h1>
@@ -13,7 +13,7 @@
 
         <!-- cards -->
         <div class="w-full flex flex-col lg:flex-row items-center justify-center space-y-3 lg:space-y-0 lg:gap-x-4 ">
-            <div v-for="(src, index) in imgSrc" :key="index" class=" backdrop-blur-lg
+            <div v-for="(src, index) in imgSrc" :key="index" class=" backdrop-blur-lg border-r-2 border-b-2 border-blue-700 
             group relative rounded-3xl lg:w-[28%] xl:w-[18%] sm:h-[330px] lg:h-[360px] overflow-hidden bg-black ">
                 <img class="w-full h-full rounded-3xl object-cover transition-all duration-300 group-hover:opacity-40" :src="src" alt="Team Member">
                 
@@ -37,8 +37,7 @@
                     <!-- social media -->
                     <section class="flex flex-row w-[54%] sm:w-[49%] lg:w-[80%] justify-center gap-x-6 lg:gap-x-3 ">
 
-                        <a class="outline outline-white rounded-full p-1 hover:bg-transparent hover:backdrop-blur-sm
-                        transition-all duration-500 hover:scale-[1.04]" v-for="(socialSrc, socialIndex) in socialMediaSrc" :key="socialIndex" href="#">
+                        <a class="outline outline-white rounded-full p-1 hover:bg-transparent hover:backdrop-blur-sm   bg-blue-100  transition-all duration-500 hover:scale-[1.04]" v-for="(socialSrc, socialIndex) in socialMediaSrc" :key="socialIndex" href="#">
                             <img  :src="socialSrc" alt="">
                         </a>
 

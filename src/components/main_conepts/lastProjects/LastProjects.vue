@@ -1,5 +1,5 @@
 <template>
-    <section class="mt-3 space-y-8 bg-white w-full flex flex-col items-center py-3 px-4">
+    <section id="projects" class="mt-3 space-y-8 bg-white w-full flex flex-col items-center py-3 px-4">
       <!-- Title -->
       <div class="flex flex-col items-center space-y-3 w-11/12 sm:w-[88%] ">
         <h1 class="text-4xl tracking-tighter">آخرین پروژه ها</h1>

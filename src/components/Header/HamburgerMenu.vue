@@ -1,74 +1,113 @@
 <template>
-  <div 
-    @click="toggleMenu" 
-    id="nav-icon2" 
-    class="w-[40px] h-[30px] relative mx-auto my-12 cursor-pointer transform transition-transform duration-500" 
-    :class="{ open: isOpen }" 
-    :aria-expanded="isOpen">
-    <span class="block absolute h-[5px] w-full  bg-sky-950 transition-all duration-300 ease-in-out" :class="{ 'top-0': !isOpen, 'top-[12px] rotate-45': isOpen }"></span>
-    <span class="block absolute h-[5px] w-full  bg-blue-950 transition-all duration-300 ease-in-out" :class="{ 'opacity-100': !isOpen, 'opacity-0': isOpen }" style="top: 12px;"></span>
-    <span class="block absolute h-[5px] w-full  bg-sky-950 transition-all duration-300 ease-in-out" :class="{ 'top-[24px]': !isOpen, 'top-[12px] -rotate-45': isOpen }"></span>
-  </div>
+ <!-- Hamburger icon -->
+ <div 
+  @click="toggleMenu" 
+  id="nav-icon2" 
+  class="w-[40px] h-[30px] relative mx-auto my-4 cursor-pointer transition-transform duration-500"
+  :class="{ open: isOpen }" 
+  :aria-expanded="isOpen">
   
-  <nav id="navB" class="absolute transform translate-x-[560px] py-3 space-y-2
-   transition-transform duration-500 flex flex-col items-center w-44 bg-white text-black rounded-lg shadow-lg">
+  <!-- Top Line -->
+  <span 
+    class="block absolute h-[4px] w-11/12 bg-gray-200 rounded-full transition-all duration-300 origin-center"
+    :class="{
+      'top-0 rotate-45 translate-y-[8px]': isOpen,
+      'top-0': !isOpen
+    }">
+  </span>
+  
+  <!-- Middle Line -->
+  <span 
+    class="block absolute h-[4px] w-11/12 bg-gray-200 rounded-full transition-opacity duration-300"
+    :class="{
+      'opacity-0': isOpen,
+      'opacity-100': !isOpen
+    }"
+    style="top: 9px;">
+  </span>
+  
+  <!-- Bottom Line -->
+  <span 
+    class="block absolute h-[4px] w-11/12 bg-gray-200 rounded-full transition-all duration-300 origin-center"
+    :class="{
+      'bottom-0 -rotate-45 translate-y-[-10px]': isOpen,
+      'bottom-0': !isOpen
+    }"
+    style="top: 18px;">
+  </span>
+</div>
+  <!-- nav menu -->
+  <nav  id="navB" class="absolute transform translate-x-[560px]  space-y-2 h-screen px-5 sm:px-3 
+   transition-transform duration-500 flex flex-col items-center w-56 bg-gradient-to-t bg-white text-black rounded-lg shadow-lg">
 
-  <!-- Analyitical png -->
-  <div >
-    <img src="/src/assets/images/Header/icons8-data-analysis-68.png" alt="">
-
+  <div class="bg-gradient-to-b h-72 from-sky-300 via-sky-100 to-transparent w-[120%] sm:w-[111%]">
+    <h1 class="text-sm text-transparent">Transparent Text</h1>
   </div>
 
-  <div class="w-11/12 h-[2px] bg-gradient-to-l from-gray-400 via-gray-200 to-gray-400 "></div>
 
-   <!-- Logo -->
-   <div class="w-[88%] px-2 flex flex-row justify-center gap-x-3 border-b-2 pb-[2px] rounded-2xl">
-        <!-- facebook -->
-        <a href="#" class="w-auto hover:scale-[1.06] transition-transform duration-500" >
-          <img src="/src/assets/images/socialMedias/icons8-facebook-logo-48.png" 
-           alt="" class="">
-        </a>
-        <!-- instagram -->
-        <a href="#" class="w-auto hover:scale-[1.06] transition-transform duration-500" >
-          <img src="/src/assets/images/socialMedias/icons8-instagram-48.png"
-           alt="" class="">
-        </a>
-          <!-- Linkedin -->
-        <a href="#" class="w-auto hover:scale-[1.06] transition-transform duration-500" >
-          <img src="/src/assets/images/socialMedias/icons8-linkedin-logo-48.png"
-           alt="" class="">
-        </a>
-        <!-- Telegram -->
-      <a href="#" class="w-auto hover:scale-[1.06] transition-transform duration-500" >
-        <img src="/src/assets/images/socialMedias/icons8-telegram-48.png"
-         alt="" class="">
-      </a>     
+  <!-- hr div
+  <div class="w-full h-[2px] bg-gradient-to-l from-blue-950 via-blue-700 to-blue-900 transform -translate-x-2 sm:-translate-x-0 "></div>
 
-   </div>
+    -->
+ 
 
-   <!-- divider div -->
-   <div class="w-11/12 h-[2px] bg-gradient-to-l from-slate-400 via-slate-300 to-slate-400 mt-3"></div>
-
-
-
-    <ul v-for="(eachLi, index) in liArr" :key="index" class="space-y-[2px] mt-2 w-full  flex-col justify-center">
-      <a href="#"  class="flex flex-row-reverse items-center w-[94%] mr-1 hover:bg-sky-50 rounded-xl p-[3px] hover:scale-[1.06]
+    <section class="flex flex-col w-full -mt-12 m-6">
+      <ul v-for="(eachLi, index) in liArr" :key="index" class="space-y-[2px] mt-2 w-full  flex-col justify-center">
+      <a :href="addHrefToScroll[index]" @click="closingMenu"  class="flex flex-row-reverse items-center w-[94%] mr-1 bg-sky-50 rounded-xl p-[3px] hover:scale-[1.06]
        transition-all duration-500 justify-end gap-x-4">
-        <h3 href="#" class="hover:text-[#d3531a] font-medium mt-1">{{ eachLi }}</h3>
+        <h3  class="hover:text-[#d3531a] font-medium mt-1">{{ eachLi }}</h3>
             <span>|</span>
         <span v-html="svgArray[index]" class="size-6"></span>
       </a>
       <!-- hr div -->
-     <div class="w-full h-1 animated-bg "></div>
+     <div class="w-full h-1 animated-bg mt-3 "></div>
     </ul>
+
+    </section>
+
+<!--     
+    divider div
+    <div class="w-full h-[2px] bg-gradient-to-l from-blue-950 via-blue-700 to-blue-900 mt-12 transform -translate-x-2 sm:-translate-x-0"></div> -->
+
+  
+    <section class="flex flex-col items-center justify-start h-screen bg-gradient-to-t from-sky-300 via-sky-100 to-transparent w-[120%] sm:w-[111%] ">
+
+            <!-- socialMedia icons -->
+            <div class="w-[88%] px-2 flex flex-row justify-center gap-x-3 border-b-2 pb-[2px] rounded-2xl mt-2">
+                  <!-- facebook -->
+                  <a  href="#"  class=" w-auto hover:scale-[1.06] transition-transform duration-500" >
+                    <img src="/src/assets/images/socialMedias/icons8-facebook-logo-48.png" 
+                    alt="" class="">
+                  </a>
+                  <!-- instagram -->
+                  <a  href="#"  class=" w-auto hover:scale-[1.06] transition-transform duration-500" >
+                    <img src="/src/assets/images/socialMedias/icons8-instagram-48.png"
+                    alt="" class="">
+                  </a>
+                    <!-- Linkedin -->
+                  <a  href="#"  class=" w-auto hover:scale-[1.06] transition-transform duration-500" >
+                    <img src="/src/assets/images/socialMedias/icons8-linkedin-logo-48.png"
+                    alt="" class="">
+                  </a>
+                  <!-- Telegram -->
+                <a  href="#"  class=" w-auto hover:scale-[1.06] transition-transform duration-500" >
+                  <img src="/src/assets/images/socialMedias/icons8-telegram-48.png"
+                  alt="" class="">
+                </a>     
+
+          </div>
+
+    </section>
+
   </nav>
 </template>
 
 <script setup>
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted, onBeforeUnmount, nextTick } from 'vue';
 
 const isOpen = ref(false);
-const liArr = ["خانه", "درباره ما", "تیم", "پردازش"];
+const liArr = ["خانه", "درباره ما", "تیم", "پردازش", "کارها", "قیمت", "کار با ما"];
+const addHrefToScroll = ["#home","#about_us", "#team", "#process" , "#projects", "#prices", "#contact_us"];
 const svgArray = [
   `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
@@ -83,27 +122,94 @@ const svgArray = [
   `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
     <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.125C2.25 6.504 2.754 6 3.375 6h6c.621 0 1.125.504 1.125 1.125v3.75c0 .621-.504 1.125-1.125 1.125h-6a1.125 1.125 0 0 1-1.125-1.125v-3.75ZM14.25 8.625c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v8.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-8.25ZM3.75 16.125c0-.621.504-1.125 1.125-1.125h5.25c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125h-5.25a1.125 1.125 0 0 1-1.125-1.125v-2.25Z" />
   </svg>
-` 
+` ,
+`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
+</svg>
+`,
+
+`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" />
+</svg>
+`,
+
+`<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+</svg>
+`
 ];
 
-const toggleMenu = () => {
-  isOpen.value = !isOpen.value;
+const toggleMenu = async () => {  
+  isOpen.value = !isOpen.value;  
+  await nextTick(); // Wait for DOM updates
+  hamburgerChangeColor(); // Run after DOM updates
+  
 };
+let arrayOfSpanTags;
+let scrollWatcher2;
 
-watch(isOpen, (newValue) => {
-  navTransform(newValue);
-});
+function hamburgerChangeColor(){  
+  const burgerElem = document.getElementById("nav-icon2");  
+  if (!burgerElem) return; // Check if the element exists  
 
-function navTransform(isOpen) {
-  const navB = document.getElementById("navB");
-  if (isOpen) {
-    navB.classList.remove('translate-x-[560px]');
-    navB.classList.add('translate-x-[50px]');
-  } else {
-    navB.classList.remove('translate-x-[50px]');
-    navB.classList.add('translate-x-[560px]');
-  }
+  arrayOfSpanTags = Array.from(burgerElem.children);  
+  scrollWatcher2 = Math.round(window.scrollY);  
+
+  arrayOfSpanTags.forEach(span => {  
+    if (scrollWatcher2 >= 40) {  
+      span.classList.remove("bg-gray-200");  
+      span.classList.add("bg-blue-950");  
+    } else {  
+      span.classList.remove("bg-blue-950");  
+      span.classList.add("bg-gray-200");  
+    }  
+  });  
+};  
+
+
+
+watch(isOpen, (newValue) => {  
+  navTransform(newValue);  
+  hamburgerChangeColor(); // Call this when menu state changes  
+});  
+
+function navTransform(isOpen) {  
+  const navB = document.getElementById("navB");  
+  if (isOpen) {  
+    navB.classList.remove('translate-x-[560px]');  
+    navB.classList.add('translate-x-[38px]');  
+  } else {  
+    navB.classList.remove('translate-x-[38px]');  
+    navB.classList.add('translate-x-[560px]');  
+  }  
+}  
+
+function handleScroll(){
+  hamburgerChangeColor()
 }
+
+function closingMenu(){
+
+        isOpen.value = false;
+        
+}
+
+
+
+
+onMounted(() => {  
+  window.addEventListener('scroll', handleScroll); // Add scroll listener  
+  hamburgerChangeColor(); // Check initial scroll position  
+  
+  
+
+
+});  
+
+onBeforeUnmount(() => {  
+  window.removeEventListener('scroll', hamburgerChangeColor); // Clean up listener  
+});  
+
 </script>
 
 <style scoped>

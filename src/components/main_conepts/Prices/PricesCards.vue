@@ -1,9 +1,9 @@
 <template>
 
-    <section class="bg-sky-50 w-full py-3  space-y-3">
+    <section id="prices" class="bg-sky-50 w-full py-3  space-y-3">
 
         <!-- title -->
-        <div class="flex flex-col items-center space-y-3 w-full sm:w-[88%] mx-auto ">
+        <div  class="flex flex-col items-center space-y-3 w-full sm:w-[88%] mx-auto ">
 
             <h1 class="text-4xl tracking-tighter">طرح های قیمت</h1>
 

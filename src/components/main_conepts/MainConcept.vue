@@ -19,7 +19,7 @@
 
         <ContacUs class="mt-5" />
 
-
+        <FooteR />
     </section>
 
 </template>
@@ -34,7 +34,7 @@ import LastProjects from './lastProjects/LastProjects.vue';
 import PricesCards from './Prices/PricesCards.vue';     
 import ContacUs from './ContactUs/ContacUs.vue';
 import NewsInfo from './newsInfo/NewsInfo.vue';
-
+import FooteR from '../Footer/FooteR.vue';
 
 
 

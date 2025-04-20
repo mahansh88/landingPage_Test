@@ -1,7 +1,7 @@
 
 <template>
     <!-- Part 1 -->
-    <section class="w-full  flex mt-12  flex-col items-center space-y-3 lg:space-y-0 lg:flex-row justify-center md:gap-x-3">
+    <section id="process" class="w-full  flex mt-12  flex-col items-center space-y-3 lg:space-y-0 lg:flex-row justify-center md:gap-x-3">
         <img src="/src/assets/images/TeamGroupImages/Pixel_Working_04.jpg"
         class="rounded-xl w-[80%] md:w-[70%] lg:w-[45%] object-contain  xl:w-[41%] xl:object-cover" alt="">
         

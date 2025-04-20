@@ -1,8 +1,8 @@
-<template>
+<template >
 
-    <main class=" w-full  flex flex-col space-y-3 items-center bg-sky-100/80 py-3">
+    <main id="contact_us"  class=" w-full  flex flex-col space-y-3 items-center bg-sky-100/80 py-3">
          <!-- title -->
-        <div class="flex flex-col items-center space-y-3 w-full sm:w-[88%]">
+        <div id="contact_us"  class="flex flex-col items-center space-y-3 w-full sm:w-[88%]">
             <h1 class="text-4xl tracking-tighter">در تماس باشید</h1>
 
             <!-- hr div -->
@@ -20,8 +20,11 @@
                 <!-- name and email -->
                 <div class="flex flex-row w-full justify-between">
                     <!-- name -->
-                    <div class="w-[40%] lg:w-[46%] flex flex-col justify-start space-y-3">
-                        <h2 class="text-lg">نام</h2>
+                    <div  class="w-[40%] lg:w-[46%] flex flex-col justify-start space-y-1">
+                        <div class="gap-x-2 flex flex-row items-center">
+                            <h2 class="text-lg">نام</h2>
+                            <span class="text-sm text-gray-400">*</span>
+                        </div>
                         <input 
                             @focus="addShadow($event)" 
                             @blur="removeShadow($event)"
@@ -32,8 +35,11 @@
                             aria-label="نام شما">
                     </div>
                     <!-- email -->
-                    <div class="w-[40%] lg:w-[46%] flex flex-col justify-start space-y-3">
-                        <h2 class="text-lg">ایمیل</h2>
+                    <div class="w-[40%] lg:w-[46%] flex flex-col justify-start space-y-1">
+                        <div class="gap-x-2 flex flex-row items-center">
+                            <h2 class="text-lg">ایمیل</h2>
+                            <span class="text-sm text-gray-400">(اختیاری)</span>
+                        </div>
                         <input 
                             @focus="addShadow($event)" 
                             @blur="removeShadow($event)"
@@ -45,8 +51,11 @@
                     </div>
                 </div>
                 <!-- subject -->
-                <div class="flex flex-col justify-start space-y-3">
-                    <h2 class="text-lg">موضوع</h2>
+                <div class="flex flex-col justify-start space-y-1">
+                    <div class="gap-x-2 flex flex-row items-center">
+                        <h2 class="text-lg">موضوع</h2>
+                        <span class="text-sm text-gray-400">*</span>
+                    </div>
                     <input 
                         @focus="addShadow($event)" 
                         @blur="removeShadow($event)"
@@ -57,8 +66,11 @@
                         aria-label="موضوع">
                 </div>
                 <!-- text area -->
-                <div class="flex flex-col justify-start space-y-3">
-                    <h2 class="text-lg">پیام</h2>
+                <div class="flex flex-col justify-start space-y-1">
+                    <div class="gap-x-2 flex flex-row items-center">
+                        <h2 class="text-lg">پیام</h2>
+                        <span class="text-sm text-gray-400">*</span>
+                    </div>
                     <textarea 
                         @focus="addShadow($event)" 
                         @blur="removeShadow($event)"
@@ -71,7 +83,7 @@
                 </div>
                 <!-- submit button -->
                 <button 
-                    @click.prevent type="submit" class="mt-4 w-[35%] mx-auto text-lg font-medium py-2 px-2 bg-blue-600 text-white rounded-2xl transition-opacity duration-300 hover:opacity-80 cursor-pointer">
+                    @click.prevent="sendBtn" type="submit" class="mt-4 w-[35%] mx-auto text-lg font-medium py-2 px-2 bg-blue-600 text-white rounded-2xl transition-opacity duration-300 hover:opacity-80 cursor-pointer">
                     ارسال
                 </button>
             </form>
@@ -126,8 +138,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { usePopupStore } from "../../../stores/usePopUpStore";
+import { ref} from "vue";
 
+const popUpElem = usePopupStore();
 
 const svgArray = ["fa fa-map-marker", "fa fa-assistive-listening-systems", "fa fa-at"];
 
@@ -159,6 +173,36 @@ const addShadow = (event) => {
 const removeShadow = (event) => {
     event.target.classList.remove("shadow-inner", "shadow-blue-500");
 };
+
+
+
+function sendBtn() {  
+
+    name.value = name.value.trim();
+    subject.value = subject.value.trim();
+    message.value = message.value.trim()
+    
+    if (!name.value) {  
+
+        popUpElem.errorPopUp("نام باید وارد شود !"); 
+
+    } else if (!subject.value) {  
+
+        popUpElem.errorPopUp("لطفا موضوع را مشخص کنید ");
+
+    } else if (!message.value) {  
+
+        popUpElem.errorPopUp("لطفا پیام خود را بنویسید");
+
+    } else {  
+
+        popUpElem.showPopup("با موفقیت ارسال شد !");  
+        name.value = "";
+        subject.value = "";
+        message.value = "";
+
+    }  
+}
 
 
 </script>
